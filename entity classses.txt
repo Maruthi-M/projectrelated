@@ -1,0 +1,80 @@
+Buyer micro service
+seller micro service
+admin micro service(optional)     
+--------------------------------------------------------------------------
+BUyer db table(one to Many) --> Shopping Cart
+Purchase History
+Items
+Transactions
+Discount
+Category(One to Many) --> Sub Category
+ ----------------------------------------------------------------------
+==>Category(One to Many) --> Sub Category
+*category table:(OneToMany)
+ 1.category_id
+ 2.category_name
+ 3.brief_details
+-------------------------------------------------------------------------------
+*subcategory table:
+ 1.subcategory_id
+ 2.subcategory_name
+ 3.category_id-----(PK)----------mistake
+ 4.brief_details
+ 5.GST %
+-------------------------------------------------------------------------------
+==>BUyer db table(one to Many) --> Shopping Cart
+**buyer table:add one to many purchases
+id
+cartid---------------(PK)@OneToOne
+username
+password
+emailid
+mobile number
+created datetime
+**cart table:
+cartid
+cartquantity
+--------------------------------------------------------------------------------------
+Discounts: Discount details
+Id
+Discount_code
+percentage
+start_date
+end_date
+description
+-------------------------------------------------------------------------------------------------
+Transactions: Transactions performed during Checkout, etc…
+id
+user_id------------(many to one)
+seller_id--------------pending
+transaction_type(Eg. debit or credit)
+date_time
+remarks
+------------------------------------------------------------------------------------------
+**Items table :
+id
+category_id
+subcategory_id--------------pending
+price
+item_name
+description
+stock_number
+remarks
+----------------------------------------------------------------------------------------
+Purchase History table:
+Id
+Buyer_id
+Seller_id---------------------pendingMany
+Transaction_id
+Item_id
+Number_of_items
+Date_time
+remarks
+------------------------------------
+cart table:
+cartId
+cartquantity
+-----------------------------------------------------------------------------------------
+buyer--transaction---item(add)
+
+                                                                 
