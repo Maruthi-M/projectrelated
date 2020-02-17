@@ -1,0 +1,8 @@
+buyer table-shopping cart(one to many)
+category table-subcategory(one to many)
+transaction-buyer(many to one)
+items-category(many-one)
+items-subcategory(many-one)
+purchase-buyer(many-one)
+purchase-transaction(many-one)
+purchase-item(many-one)
